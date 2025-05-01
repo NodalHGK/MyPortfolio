@@ -56,7 +56,9 @@ window.onload = function () {
         document.querySelector(".header").classList.add("header_visible");
     }
     if (localStorage.getItem("hidden_blocks_visible")) {
-        document.querySelector(".hidden-blocks").classList.add("visible-blocks");
+        document.querySelectorAll(".hidden-blocks").forEach(element => {
+            element.classList.add("visible-blocks");
+        });
     }
 };
 
