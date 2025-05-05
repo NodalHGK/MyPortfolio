@@ -33,6 +33,7 @@ window.onload = function () {
                     document.querySelector(".promo__links").classList.add("promo__links_visible");
                     document.querySelector(".promo__imgBox").classList.add("promo__imgBox_visible");
                     document.querySelector(".header").classList.add("header_visible");
+                    document.querySelector(".aside_hidden").classList.add("aside_visible");
                     document.querySelector(".hidden-blocks").classList.add("visible-blocks");
 
                     // Сохранение классов в localStorage
