@@ -86,7 +86,7 @@ function scrollToSection(sectionId) {
 }
 
 document.getElementById("scrollLink").addEventListener("click", function() {
-    scrollToSection("section1");
+    scrollToSection("aboutMe");
 });
 document.getElementById("scrollButton").addEventListener("click", function() {
     scrollToSection("portfolio");

@@ -48,6 +48,17 @@
                                 <span>#</span>навыки
                             </a>
                         </li>
+                        <div class="social_linkIcons">
+                            <a href="" target="_blank" class="tg linkIcons">
+                                <img src="icons/telegram-svgrepo-com.svg" alt="telegram linkIcon">
+                            </a>
+                            <a href="" target="_blank" class="insta linkIcons">
+                                <img src="icons/instagram-svgrepo-com.svg" alt="instagram linkIcon">
+                            </a>
+                            <a href="" target="_blank" class="git linkIcons">
+                                <img src="icons/github-142-svgrepo-com.svg" alt="github linkIcon">
+                            </a>
+                        </div>
                     </ul>
                 </nav>
             </header>
@@ -107,9 +118,9 @@
                         <div class="projects__items_descr">
                             Краткое описание сайта
                         </div>
-                        <button class="projects__items_button">
+                        <a href="" class="projects__items_button">
                             Демо &rarr;
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="projects__items_box">
@@ -124,9 +135,9 @@
                         <div class="projects__items_descr">
                             Краткое описание сайта
                         </div>
-                        <button class="projects__items_button">
+                        <a href="" class="projects__items_button">
                             Демо &rarr;
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="projects__items_box">
@@ -141,9 +152,9 @@
                         <div class="projects__items_descr">
                             Краткое описание сайта
                         </div>
-                        <button class="projects__items_button">
+                        <a href="" class="projects__items_button">
                             Демо &rarr;
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -195,7 +206,7 @@
             </div>
         </div>
     </section>
-    <section class="about__me hidden-blocks">
+    <section class="about__me hidden-blocks" id="aboutMe">
         <div class="container">
             <div class="title__box">
                 <h2 class="title"><span>#</span>обо-мне</h2>
@@ -222,7 +233,48 @@
         </div>
     </section>
     <section class="contacts">
-        
+        <div class="container">
+            <div class="title__box">
+                <h2 class="title"><span>#</span>контакты</h2>
+                <div class="title__box_line"></div>
+            </div>
+            <h3 class="contacts__descr">
+                <span>//</span> Свяжитесь со мной по данным контактам, или оставьте свои контакты для связи <span>//</span>
+            </h3>
+            <div class="contacts__wrapper">
+                <div class="contacts__links">
+                    <a href="" class="contacts__link">
+                        <img src="icons/discord-svgrepo-com.svg" alt="discord">
+                        : loremdis
+                    </a>
+                    <a href="" class="contacts__link">
+                        <img src="icons/telegram-alt-svgrepo-com.svg" alt="telegram">
+                        : @etotelega
+                    </a>
+                    <a href="" class="contacts__link">
+                        <img src="icons/email-svgrepo-com.svg" alt="email">
+                        : tipaemail@krutoi.com
+                    </a>
+                </div>
+                <form action="#" method="#" class="contacts__form">
+                    <div class="contacts__grid">
+                        <div class="contacts__input">
+                            <input type="text" name="name" id="name" placeholder="// Имя">
+                            <label for="name">Ваше имя</label>
+                        </div>
+                        <div class="contacts__input">
+                            <input type="email" name="email" id="email" placeholder="// Почта">
+                            <label for="email">Ваш email</label>
+                        </div>
+                        <div class="contacts__textarea">
+                            <textarea name="text" id="text" placeholder="// Доп контакты или информация"></textarea>
+                            <label for="text">Сообщение</label>
+                        </div>
+                    </div>
+                    <button class="contacts__btn">Отправить</button>
+                </form>
+            </div>
+        </div>
     </section>
     <script src="js/script.js"></script>
 </body>
