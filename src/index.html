@@ -259,11 +259,11 @@
                 <form action="#" method="#" class="contacts__form">
                     <div class="contacts__grid">
                         <div class="contacts__input">
-                            <input type="text" name="name" id="name" placeholder="// Имя">
+                            <input required type="text" name="name" id="name" placeholder="// Имя">
                             <label for="name">Ваше имя</label>
                         </div>
                         <div class="contacts__input">
-                            <input type="email" name="email" id="email" placeholder="// Почта">
+                            <input required type="email" name="email" id="email" placeholder="// Почта">
                             <label for="email">Ваш email</label>
                         </div>
                         <div class="contacts__textarea">
@@ -271,7 +271,14 @@
                             <label for="text">Сообщение</label>
                         </div>
                     </div>
-                    <button class="contacts__btn">Отправить</button>
+                    <div class="contacts__policy">
+                        <div class="contacts__checkbox">
+                            <input required type="checkbox">
+                            <span>Я соглаcен(а) с</span> 
+                            <a href="privacy.html">политикой конфеденциальности</a>
+                        </div>
+                        <button class="contacts__btn">Отправить</button>
+                    </div>
                 </form>
             </div>
         </div>
