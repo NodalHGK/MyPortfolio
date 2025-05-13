@@ -103,7 +103,6 @@
             <div class="title__box">
                 <h2 class="title"><span>#</span>портфолио</h2>
                 <div class="title__box_line"></div>
-                <a href="" class="title__box_link">Посмотреть все &rarr;</a>
             </div>
             <div class="projects__items">
                 <div class="projects__items_box">
@@ -158,6 +157,9 @@
                     </div>
                 </div>
             </div>
+            <div class="title_link_box">
+                <a href="" class="box_link">Посмотреть все &rarr;</a>
+            </div>
         </div>
     </section>
     <section class="skills  hidden-blocks">
@@ -191,7 +193,7 @@
                         </h3>
                         <div class="skills__items_descr">
                             HTML CSS SASS SCSS <br>
-                            LESS
+                            LESS Linux(Ubuntu)
                         </div>
                     </div>
                     <div class="skills__items_box">
@@ -199,7 +201,7 @@
                             Фреймворки
                         </h3>
                         <div class="skills__items_descr">
-                            React Gulp
+                            React Gulp JQuery
                         </div>
                     </div>
                 </div>
@@ -217,17 +219,17 @@
                         Привет, меня зовут Кирилл!
                     </div>
                     <div class="about__me_text">
-                        Я front-end разработчик самоучка родом из города Хабаровск. <br>
+                        Я front-end разработчик-самоучка родом из города Хабаровск. <br>
                         Я умею разрабатывать адаптивные web-сайты с нуля, 
-                        превращая макет,  в современный и удобный для использолвания сайт на любых платформах.
+                        превращая макет  в современный и удобный для использолвания сайт на любых платформах.
                     </div>
                     <div class="about__me_text">
                         8 лет прожив в Китае и получив там выссшее экономическое образование,
                         я очень долго не мог найти себя, меняя разные профессии, 
-                        пока однажды не наткнулся на видео в интернете, где коротко рассказывалось о программирование web-сайтов,
-                        мне захотелось попробовать что это такое, и программирование меня просто затянуло, 
-                        испытывая детский восторг от создания первой HTML страницы я понял что хочу связать с этим свою жинь, 
-                        превратить программирование не только в хобби но и в работу от которой я будут по настоящему получать удовольствие
+                        пока однажды не наткнулся на видео в интернете, где коротко рассказывалось о программирование web-сайтов.
+                        Мне захотелось попробовать что это такое, и программирование меня просто затянуло. 
+                        Испытывая детский восторг от создания первой HTML страницы, я понял, что хочу связать с этим свою жизнь, 
+                        превратить программирование не только в хобби, но и в работу, от которой я будут по-настоящему получать удовольствие.
                     </div>
                 </div>
         </div>
@@ -256,7 +258,7 @@
                         : tipaemail@krutoi.com
                     </a>
                 </div>
-                <form  id="myForm" action="#" method="post" class="contacts__form">
+                <form  id="myForm" action="" method="#" class="contacts__form">
                     <div class="contacts__grid">
                         <div class="contacts__input">
                             <input required type="text" name="name" id="name" placeholder="// Имя">
@@ -267,7 +269,7 @@
                             <label for="email">Ваш email</label>
                         </div>
                         <div class="contacts__textarea">
-                            <textarea name="text" id="text" placeholder="// Доп контакты или информация"></textarea>
+                            <textarea minlength="6" maxlength="2000" name="text" id="text" placeholder="// Доп контакты или информация"></textarea>
                             <label for="text">Сообщение</label>
                         </div>
                     </div>
@@ -277,13 +279,25 @@
                             <span>Я соглаcен(а) с</span> 
                             <a href="privacy.html">политикой конфеденциальности</a>
                         </div>
-                        <button class="contacts__btn">Отправить</button>
+                        <button data-modal="modal"  class="contacts__btn">Отправить</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <div class="overlay" id="overlayActive">
+        <div class="modal__boxItems" id="boxItems">
+            <div class="modal__close">
+                &times;
+            </div>
+            <div class="modal__text">
+                Спасибо за заявку! <br>
+                Я свяжусь с вами в ближайшее время
+            </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

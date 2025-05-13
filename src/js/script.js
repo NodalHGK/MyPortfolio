@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     menuItem.forEach(item => {
         item.addEventListener('click', () => {
-            hamburger.classList.toggle('hamburger_active');
+            hamburger.classList.toggle('hamburger_active, body');
             menu.classList.toggle('header__links_active');
         })
     })
@@ -94,28 +94,88 @@ document.getElementById("scrollButton").addEventListener("click", function() {
 
 (function ($) {
     $(function() {
+        function isFormValid($form) {
+            var isValid = true;
+
+            $form.find('[required]').each(function(){
+                var $field = $(this);
+                var val = $field.val().trim();
+
+                if ($field.attr('type') === 'checkbox') {
+                    if (!$field.is(':checked')) {
+                        isValid = false;
+                        $field.addClass('error');
+                    } else {
+                        $field.removeClass('error');
+                    }
+                } else {
+                    if (!val) {
+                        isValid = false;
+                        $field.addClass('error');
+                    } else {
+                        $field.removeClass('error');
+                    }
+                }
+            });
+            return isValid;
+        }
+
+        $('#myForm').on('submit', function(e){
+            e.preventDefault();
+
+            var $form = $(this);
+
+            if (!isFormValid($form)) {
+                alert('Пожалуйста заполните все обязательные поля');
+                return;
+            }
+            $('#overlayActive').fadeIn(300);
+            $('boxItems').fadeIn(500);
+
+        });
+
+        $('[data-modal=modal]').on('click', function() {
+            var $form = $(this).closest('#myForm');
+            if (!$form.length) return;
+
+            if (!isFormValid($form)) {
+                alert('Пожалуйста заполните все обязательные поля');
+                return;
+            }
+
+            $('#overlayActive').fadeIn(300);
+            $('#boxItems').fadeIn(500);
+        });
+
+        $('.modal__close, #overlayActive').on('click', function() {
+            $('#overlayActive, #boxItems').fadeOut('slow');
+        });
+        // $('[data-modal=modal]').on('click', function() {
+        //     const $form = $(this).closest('form');
+        //     if ($form.valid && !$form.valid()) {
+        //         return
+        //     }
+        //     $('#overlayActive').fadeIn(300)
+        //     $('#boxItems').fadeIn(500)
+        // });
+        // $('.modal__close, #overlayActive').on('click', function(){
+        //     $('#overlayActive, #boxItems').fadeOut('slow');
+        // })
 
     $("form").submit(function(e) {
-      e.preventDefault();
+        e.preventDefault();
 
-    //   if (!$(this).valid()) {
-    //     return;
-    //   }
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+             data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('form').trigger('reset');
 
-      $.ajax({
-        type: "POST",
-        url: "mailer/smart.php",
-        data: $(this).serialize()
-      }).done(function() {
-        $(this).find("input").val("");
-
-
-        $('form').trigger('reset');
-
-      });
-      return false;
-    });
-
+        });
+        return false;
+        });
     });
 })(jQuery);
 
