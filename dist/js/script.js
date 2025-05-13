@@ -92,6 +92,33 @@ document.getElementById("scrollButton").addEventListener("click", function() {
     scrollToSection("portfolio");
 });
 
+(function ($) {
+    $(function() {
+
+    $("form").submit(function(e) {
+      e.preventDefault();
+
+    //   if (!$(this).valid()) {
+    //     return;
+    //   }
+
+      $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+      }).done(function() {
+        $(this).find("input").val("");
+
+
+        $('form').trigger('reset');
+
+      });
+      return false;
+    });
+
+    });
+})(jQuery);
+
 // window.addEventListener("scroll", function () {
 //     const targetElement = document.querySelector(".your-element"); // Замените на нужный селектор
 //     const scrollTrigger = 300; // Укажите количество пикселей, после которого добавляется класс
